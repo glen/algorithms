@@ -1,87 +1,56 @@
-# Binary Search
+# Implementation of Binary Search
 
-This is a demonstration of Binary Search in Ruby.
+[Binary Search Algorithm](#linear-search-algorithm)
+ - [Example](#example)
 
-## Getting Started
+[Installation](#installation)
+ - [Pre-requisites](#prerequisites)
+ - [Installation Process](#installation-process)
+[Running the code](#running-the-code)
+[Tests](#tests)
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+## Binary Search Algorithm
 
-### Prerequisites
+This is an implementation of [Binary Search Algorithm](https://en.wikipedia.org/wiki/Binary_search_algorithm). The Algorithm goes like this
 
-What things you need to install the software and how to install them
+1. Sort the array
+2. Compare the target value to the middle element of the array.
+3. If not equal, the half in which the target cannot lie is eliminated.
+4. Repeat Steps 2 and 3 until the target value is found or the array is empty.
 
+# Example
+
+Element present in  array
 ```
-Give examples
+Input: 	          [1, 2, 3, 4, 5, 6, 7, 8, 9]
+Number to Search: 3
+Located:          Yes
+Iterations:       2
 ```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
+Element _not_ present in  array
 ```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
+Input: 	          [1, 2, 3, 4, 5, 6, 7, 8, 9]
+Number to Search: 11
+Located:          No
+Iterations:       4
 ```
 
-### And coding style tests
+## Installation
 
-Explain what these tests test and why
+# Prerequisites
+1. Ensure that you have a ruby version manager present ([*rvm*](https://rvm.io/) or [*rbenv*](https://github.com/rbenv/rbenv)).
 
-```
-Give an example
-```
+# Installation
+1. Install ruby.
+2. Install bundler through `gem install bundler`
+3. Do `bundle install` - which will install all gems and dependencies.
 
-## Deployment
+## Running the code
+1. Go ahead and just `ruby app.rb 5` in the terminal or use `./bin/run 5`
+2. You will get an error complaining of `input.json` not found - but don't worry an `input.json` will be created and put in `config/input.json`.
+3. The `config/input.json` has the data that is being used as input for the linear search code. Fill it in with random numbers.
+4. Try it again `ruby app.rb 5` ( `./bin/run 5` ).
+5. Based on the numbers present in the `input.json` file - you will either get the index of the number if located or `-1`.
 
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+# Tests
+Run `bundle exec rspec` which will run the rspecs located under `spec` folder and give a coverage report.
