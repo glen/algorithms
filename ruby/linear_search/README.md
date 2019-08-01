@@ -11,7 +11,7 @@
 
 ## Linear Search Algorithm
 
-This is an implementation of [Linear Search Algorithm](https://guides.github.com/features/mastering-markdown/). The Algorithm goes like this
+This is an implementation of [Linear Search Algorithm](https://en.wikipedia.org/wiki/Linear_search). The Algorithm goes like this
 
 1. Start from the leftmost element of arrary[] and one by one compare x with each element of array[]
 2. If x matches with an element, return the index.
