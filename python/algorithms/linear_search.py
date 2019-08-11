@@ -5,5 +5,5 @@ class LinearSearch:
   def search(self, target):
     for index, element in enumerate(self.search_array):
       if target == element:
-        return index    
+        return index
     return -1

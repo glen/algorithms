@@ -1,6 +1,6 @@
 import sys
 sys.path.append('../')
-from algorithms import linear_search
+from python.algorithms import linear_search
 import unittest
 
 class TestLinearSearch(unittest.TestCase):

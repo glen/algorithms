@@ -1,7 +1,7 @@
 import sys
 import os
 sys.path.append('../')
-from lib import read_data
+from python.lib import read_data
 import unittest
 from unittest.mock import patch, mock_open, Mock
 
