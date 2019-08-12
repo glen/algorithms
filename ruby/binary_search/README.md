@@ -1,6 +1,6 @@
-# Implementation of Linear Search
+# Implementation of Binary Search
 
-[Linear Search Algorithm](#linear-search-algorithm)
+[Binary Search Algorithm](#linear-search-algorithm)
  - [Example](#example)
 
 [Installation](#installation)
@@ -9,29 +9,30 @@
 [Running the code](#running-the-code)
 [Tests](#tests)
 
-## Linear Search Algorithm
+## Binary Search Algorithm
 
-This is an implementation of [Linear Search Algorithm](https://en.wikipedia.org/wiki/Linear_search). The Algorithm goes like this
+This is an implementation of [Binary Search Algorithm](https://en.wikipedia.org/wiki/Binary_search_algorithm). The Algorithm goes like this
 
-1. Start from the leftmost element of arrary[] and one by one compare x with each element of array[]
-2. If x matches with an element, return the index.
-3. If x doesn’t match with any of elements, return -1 (No).
+1. Sort the array
+2. Compare the target value to the middle element of the array.
+3. If not equal, the half in which the target cannot lie is eliminated.
+4. Repeat Steps 2 and 3 until the target value is found or the array is empty.
 
 # Example
 
 Element present in  array
 ```
-Input: 	          [4, 6, 2, 5, 3, 7]
-Number to Search: 5
+Input: 	          [1, 2, 3, 4, 5, 6, 7, 8, 9]
+Number to Search: 3
 Located:          Yes
-Iterations:       4
+Iterations:       2
 ```
 Element _not_ present in  array
 ```
-Input: 	          [4, 6, 2, 5, 3, 7]
+Input: 	          [1, 2, 3, 4, 5, 6, 7, 8, 9]
 Number to Search: 11
 Located:          No
-Iterations:       6
+Iterations:       4
 ```
 
 ## Installation
