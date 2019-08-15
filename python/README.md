@@ -56,3 +56,4 @@ For example `python linear_search.py 5`
 2. Based on the numbers present in the `input.json` file - you will either get the index of the number if located or `No`.
 
 # Tests
+1. Run `pytest --cov-report term-missing --cov python tests/test_*.py` in the terminal to check code coverage.
