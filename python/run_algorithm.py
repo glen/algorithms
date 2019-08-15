@@ -9,6 +9,7 @@ from python.lib import helper
 class RunAlgorithm:
     AVAILABLE_ALGORITHMS = ('linear_search')
     INPUT_FILE = 'data/input.json'
+    LOG = sys.stdout
 
     def __init__(self):
         self.parse_args(sys.argv)
@@ -16,7 +17,7 @@ class RunAlgorithm:
 
     def parse_args(self, args=[]):
         if len(args) < 3:
-            print('Invalid input!\nRun code like this "python run_algorithm [algorithm_name] [number_to_search]"')
+            self.LOG.write('Invalid input!\nRun code like this "python run_algorithm [algorithm_name] [number_to_search]"')
             sys.exit(0)
 
         self.algorithm_to_run = sys.argv[1]
@@ -46,7 +47,7 @@ class RunAlgorithm:
         print(helper.print_label('Target', 10, 'blue'), helper.print_value(self.target, 'yellow'))
         print(helper.print_label('Located', 10, 'blue'), helper.print_value('Yes', 'green') if self.located_position >=0 else helper.print_value('No', 'red') )
         if self.located_position >= 0:
-            print( helper.print_label('Position', 10, 'blue'), helper.print_value(self.located_position, 'yellow') )
+            print(helper.print_label('Position', 10, 'blue'), helper.print_value(self.located_position, 'yellow') )
 
 if __name__ == '__main__':
     app = RunAlgorithm()
