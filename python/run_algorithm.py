@@ -9,7 +9,6 @@ from python.lib import helper
 class RunAlgorithm:
     AVAILABLE_ALGORITHMS = ('linear_search', 'binary_search')
     INPUT_FILE = 'data/input.json'
-    LOG = sys.stdout
 
     def __init__(self):
         self.parse_args(sys.argv)
@@ -17,7 +16,7 @@ class RunAlgorithm:
 
     def parse_args(self, args=[]):
         if len(args) < 3:
-            self.LOG.write('Invalid input!\nRun code like this "python run_algorithm [algorithm_name] [number_to_search]"')
+            print('Invalid input!\nRun code like this "python run_algorithm [algorithm_name] [number_to_search]"\n')
             sys.exit(0)
 
         self.algorithm_to_run = sys.argv[1]
