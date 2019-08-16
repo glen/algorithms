@@ -4,6 +4,6 @@ require 'byebug'
 
 Bundler.require(:default)
 
-Dir.glob(File.join('./config/initializer', '**.rb')).each do |initializer|
+Dir.glob(File.join('./config/initializer', '**.rb')).sort.each do |initializer|
   require initializer
 end
