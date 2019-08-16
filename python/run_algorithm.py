@@ -36,16 +36,16 @@ class RunAlgorithm:
             target = self.target
         self.input_data = read_data.read_json_file(self.INPUT_FILE)
         self.algo = eval(f"self.imported.{helper.class_name(self.algorithm_to_run)}(self.input_data['input'])")
-        return self.algo.search(target)
+        self.located = self.algo.search(target)
+        return self.located
 
     def print_result(self):
         algorithm_name = helper.class_name(self.algorithm_to_run)
         print(colored(f" {algorithm_name} ".center(60, '#'), 'grey', 'on_white'))
         print(helper.print_label('Input', 10, 'blue'), helper.print_value(self.input_data['input'], 'yellow'))
         print(helper.print_label('Target', 10, 'blue'), helper.print_value(self.target, 'yellow'))
-        print(helper.print_label('Located', 10, 'blue'), helper.print_value('Yes', 'green') if self.algo.iteration >=0 else helper.print_value('No', 'red') )
-        if self.algo.iteration >= 0:
-            print(helper.print_label('Iteration', 10, 'blue'), helper.print_value(self.algo.iteration, 'yellow'))
+        print(helper.print_label('Located', 10, 'blue'), helper.print_value('Yes', 'green') if self.located >= 0 else helper.print_value('No', 'red') )
+        print(helper.print_label('Iteration', 10, 'blue'), helper.print_value(self.algo.iteration, 'yellow'))
 
 if __name__ == '__main__':
     app = RunAlgorithm()
