@@ -7,6 +7,7 @@ from unittest.mock import patch
 from python.lib import read_data
 from contextlib import contextmanager
 from io import StringIO
+import algorithms
 
 @contextmanager
 def captured_output():
@@ -31,8 +32,13 @@ class runAlgorithmTestCase(unittest.TestCase):
     # def test_no_command_line_arguments_stdout(self):
     #     with patch.object(sys, 'argv', []):
     #         with captured_output() as (out, err):
-    #             with self.assertEqual(out.getvalue().strip(), 'Invalid input!\nRun code like this "python run_algorithm [algorithm_name] [number_to_search]"'): # self.assertRaises(SystemExit):
-    #                 run_algorithm.RunAlgorithm()
+    #             # with self.assertRaises(SystemExit):
+    #             # with self.assertEqual(out.getvalue().strip(), 'Invalid input!\nRun code like this "python run_algorithm [algorithm_name] [number_to_search]"'): # self.assertRaises(SystemExit):
+    #             run_algorithm.RunAlgorithm()
+    #             output = out.getvalue().strip()
+    #             op = output.encode("ascii", errors="ignore").decode()
+    #             print(op)
+    #             self.assertIn('hello', op)
 
     def test_single_command_line_argument(self):
         with patch.object(sys, 'argv', ['python', 'linear_search']):
@@ -58,7 +64,7 @@ class runAlgorithmTestCase(unittest.TestCase):
                     with patch.object(json, 'load', return_value={'input': [5, 7, 2, 3]}):
                         x = run_algorithm.RunAlgorithm()
                         x.locate()
-                        x.print_result()
+                        x.print_search_result()
                         output = out.getvalue().strip()
                         op = output.encode("ascii", errors="ignore").decode()
                         expected_title = ' LinearSearch '.center(60, '#')
