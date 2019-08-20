@@ -14,8 +14,8 @@ class BubbleSort:
         if no_of_elements is None:
             no_of_elements = len(self.sort_array) - 1
 
-        if no_of_elements == 1:
-            return
+        # if no_of_elements == 1:
+        #     return
 
         pass_output = []
         swapped = False

@@ -16,19 +16,19 @@ class RunAlgorithm:
         self.load_algorithm(self.algorithm_to_run)
 
     def parse_args(self, args=[]):
-        if len(args) == 0:
-            print('Invalid input!\nRun code like this "python run_algorithm [algorithm_name] [number_to_search]"\n')
+        if len(args) <= 1:
+            print('Invalid input!\nRun code like this "python run_algorithm.py [algorithm_name] [number_to_search]"\n')
             sys.exit(0)
 
         self.algorithm_to_run = sys.argv[1]
 
         if self.algorithm_to_run not in self.AVAILABLE_ALGORITHMS:
-            print('Available algorithms are ', self.AVAILABLE_ALGORITHMS)
+            print('Available Algorithms are', self.AVAILABLE_ALGORITHMS)
             sys.exit(0)
 
         if re.match("(.*_)search$", self.algorithm_to_run):
             if len(args) < 3:
-                print('Invalid input!\nRun code like this "python run_algorithm [algorithm_name] [number_to_search]"\n')
+                print('Invalid input!\nRun code like this "python run_algorithm.py [algorithm_name] [number_to_search]"\n')
                 sys.exit(0)
             else:
                 self.target = int(sys.argv[2])
