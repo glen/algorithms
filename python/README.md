@@ -51,8 +51,8 @@ Iterations:       6
 1. Update the data present in the file *input.json*
 
 ## Running the code
-1. Go ahead and just `python [algorithm] [input]` in the terminal.
-For example `python linear_search.py 5`
+1. Go ahead and just `python run_algorithm.py [algorithm] [input]` in the terminal.
+For example `python run_algorithm.py linear_search 5`
 2. Based on the numbers present in the `input.json` file - you will either get the index of the number if located or `No`.
 
 # Tests

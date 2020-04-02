@@ -74,7 +74,7 @@ class runAlgorithmTestCase(unittest.TestCase):
                     expected_output = "Yes"
                     with captured_output() as (out, err):
                         x = run_algorithm.RunAlgorithm()
-                        self.assertEqual(x.locate(), 1)
+                        self.assertEqual(x.locate(), 2)
                         x.print_search_result()
                     output = out.getvalue().strip()
                     self.assertIn(expected_output, output)

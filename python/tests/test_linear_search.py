@@ -8,10 +8,10 @@ class TestLinearSearch(unittest.TestCase):
         self.linear_search = linear_search.LinearSearch([5, 7, 4, 9, 2, 6, 3])
 
     def test_search_present(self):
-        self.assertEqual(self.linear_search.search(5), 0)
-  
+        self.assertEqual(self.linear_search.search(5), 1)
+
     def test_search_absent(self):
         self.assertEqual(self.linear_search.search(11), -1)
 
 if __name__ == '__main__':
-  unittest.main()
+    unittest.main()
